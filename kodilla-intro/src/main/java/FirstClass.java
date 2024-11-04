@@ -4,6 +4,8 @@ public class FirstClass {
         System.out.println(example);
         if (1>2) {
             System.out.println ("Niesamowite! Jeden jest wieksze niz dwa!!!");
+        } else {
+            System.out.println ("Wszystko po staremu, jeden jest mniejsze niż dwa.");
         }
     }
 }
