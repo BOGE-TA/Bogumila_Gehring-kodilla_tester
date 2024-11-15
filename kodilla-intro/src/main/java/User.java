@@ -10,12 +10,15 @@ public class User {
         User rebeca = new User ("Rebeca", 22);
         User matthew = new User ("Matthew", 33);
         User[] users= {michael, rebeca, matthew};
-        users.checkAverageAge();
+        double avg = checkAverageAge(users);
+        System.out.println(avg);
     }
+
+public static double checkAverageAge (User[] users) {
+    int sum = 0;
+    for (int i = 0; i < users.length; i++) {
+        sum = sum + users[i].age;
+    }
+    return sum / (double) users.length;
 }
-public void checkAverageAge (){
-    int result= 0;
-    for (int i= 0; i< users.lenght; i++) {
-        result = result + users[i] / 3 ;
-    }
 }

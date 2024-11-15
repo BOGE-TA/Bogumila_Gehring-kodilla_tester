@@ -1,16 +1,33 @@
+import java.util.Random;
+
 public class RandomNumbers {
-    public int getCountofRandomNumber (int max){
-        RandomNumbers random = new RandomNumbers ();
+    private int minValue;
+    private int maxValue;
+
+    public int getCountofRandomNumber(int max) {
+        Random random = new Random();
         int result = 0;
-        int sum= 5000;
+        int sum = 5000;
         while (sum < max) {
-        int temp = random. nextlnt(31);
-        sum= sum+temp;
-        result ++;
+            int temp = random.nextInt(31);
+            if (temp > maxValue) {
+                maxValue=temp;
+            }
+            if (temp > minValue) {
+                minValue=temp;
+            }
+            sum = sum + temp;
+            result++;
         }
         return result;
     }
 
-    private int nextlnt(int i) {
-    return;}
+
+    public int getMinValue() {
+        return minValue;
+    }
+
+    public int getMaxValue() {
+        return maxValue;
+    }
 }

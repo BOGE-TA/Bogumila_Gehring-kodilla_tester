@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class UserDialogs {
     public static String getUsername() {
-        Scanner scanner = new Scanner (System.in);      // [1]
+        Scanner scanner = new Scanner(System.in);      // [1]
 
         while (true) {                                  // [2]
 
@@ -16,6 +16,7 @@ public class UserDialogs {
             System.out.println("Name is too short. Try again.");
         }
     }
+
     public static String getUserSelection() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -35,3 +36,4 @@ public class UserDialogs {
             }
         }
     }
+}
