@@ -36,4 +36,10 @@ public class UserDialogs {
             }
         }
     }
+    public static int getValue (){
+        Scanner scanner = new Scanner (System.in);
+        System.out.println ("Enter number: ");
+        int val = scanner.nextInt();
+        return val;
+    }
 }
