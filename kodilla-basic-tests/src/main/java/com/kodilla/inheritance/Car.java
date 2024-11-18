@@ -11,4 +11,10 @@ public class Car {
     public void openDoors () {
         System.out.println ("Opening 4 doors");
     }
+    public Car (int wheels, int seats) {
+        this.wheels = wheels;
+        this.seats = seats;
+        System.out.println ("Car constructor");
+    }
+
 }
