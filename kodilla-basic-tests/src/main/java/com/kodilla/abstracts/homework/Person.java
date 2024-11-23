@@ -8,5 +8,6 @@ public class Person {
     }
 
     private void responsibilities() {
+        
     }
 }
