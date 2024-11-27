@@ -16,6 +16,19 @@ public class Application {
             System.out.println("The sum method does not work correctly for the numbers" + " " + a + " " + "and" + " " + b + ".");
             System.out.println("The subtraction method does not work correctly for the numbers" + " "  +  a  + " " +  "and" + " "  +  b + ".");
         }
+        // Test dla liczby dodatniej
+        int result1 = calculator.square(5);
+        System.out.println("Square of 5: " + result1); // Oczekiwany wynik: 25
+
+        // Test dla liczby ujemnej
+        int result2 = calculator.square(-3);
+        System.out.println("Square of -3: " + result2); // Oczekiwany wynik: 9
+
+        // Test dla zera
+        int result3 = calculator.square(0);
+        System.out.println("Square of 0: " + result3); // Oczekiwany wynik: 0
     }
 }
+
+
 
