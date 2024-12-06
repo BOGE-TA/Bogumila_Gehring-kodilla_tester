@@ -11,7 +11,9 @@ public class ShapeListApplication {
         Shapes.add(new Square(10.0));
         Shapes.add(new Square(5.0));
         Shapes.add(new Square(1.0));
-        for (int n = 0; n < Shapes.size(); n++)
-            System.out.println(Shapes.get(n));
+        for (Square square : Shapes) {
+            if (square.getArea() > 20)
+                System.out.println(square + ", area: " + square.getArea());
+        }
     }
 }
