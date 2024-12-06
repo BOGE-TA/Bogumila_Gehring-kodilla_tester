@@ -12,6 +12,8 @@ class GeneralShapesListApplication {
         shapes.add(new Square(10.0));
         shapes.add(new Circle(7.0));
         shapes.add(new Triangle(10.0, 4.0, 10.77));
+        shapes.remove(1);
+        System.out.println(shapes.size());
         for (Shape shape : shapes) {
             System.out.println(shape + ", area: " + shape.getArea()
                     +
