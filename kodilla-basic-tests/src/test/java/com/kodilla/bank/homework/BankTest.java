@@ -10,7 +10,7 @@ public class BankTest {
     Bank bank;
 
     @BeforeEach
-    pubic void setUp(){
+    public void setUp(){
         bank = new Bank(2);
     }
 
