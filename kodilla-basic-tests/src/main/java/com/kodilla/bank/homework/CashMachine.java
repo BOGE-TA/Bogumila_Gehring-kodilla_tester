@@ -11,7 +11,7 @@ public class CashMachine {
 
         public void addTransaction(double amount) {
             if (amount == 0) {
-                return; // Ignorujemy transakcje o wartości 0
+                return; // We ignore transactions with a value of 0
             }
             size++;
             double[] newTransactions = new double[size];
