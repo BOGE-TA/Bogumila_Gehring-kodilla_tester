@@ -1,3 +1,5 @@
+import java.util.List;
+
 class School {
     private String name;
     private List<Integer> classSizes;
