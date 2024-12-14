@@ -1,4 +1,3 @@
-
 package com.kodilla.collections.adv.exercises.homework;
 
 import org.junit.jupiter.api.Test;
@@ -9,37 +8,51 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FlightFinderTestSuite {
 
-    @Test
-    void testFindFlightsFrom() {
-        FlightFinder finder = new FlightFinder();
-        List<Flight> flights = finder.findFlightsFrom("New York");
+    private final FlightFinder finder = new FlightFinder();
 
-        assertEquals(1, flights.size());
-        assertEquals("London", flights.get(0).getArrival());
+    @Test
+    void shouldFindFlightsFromGivenCity() {
+        verifyFlightsFrom("New York", 1, "London");
     }
 
     @Test
-    void testFindFlightsTo() {
-        FlightFinder finder = new FlightFinder();
-        List<Flight> flights = finder.findFlightsTo("Berlin");
-
-        assertEquals(1, flights.size());
-        assertEquals("Paris", flights.get(0).getDeparture());
+    void shouldFindFlightsToGivenCity() {
+        verifyFlightsTo("Berlin", 1, "Paris");
     }
 
     @Test
-    void testFindFlightsFrom_NoResults() {
-        FlightFinder finder = new FlightFinder();
-        List<Flight> flights = finder.findFlightsFrom("Warsaw");
-
-        assertTrue(flights.isEmpty());
+    void shouldReturnEmptyListWhenNoFlightsFromGivenCity() {
+        verifyNoFlightsFrom("Warsaw");
     }
 
     @Test
-    void testFindFlightsTo_NoResults() {
-        FlightFinder finder = new FlightFinder();
-        List<Flight> flights = finder.findFlightsTo("Warsaw");
+    void shouldReturnEmptyListWhenNoFlightsToGivenCity() {
+        verifyNoFlightsTo("Warsaw");
+    }
 
-        assertTrue(flights.isEmpty());
+    private void verifyFlightsFrom(String departure, int expectedSize, String expectedArrival) {
+        List<Flight> flights = finder.findFlightsFrom(departure);
+
+        assertEquals(expectedSize, flights.size());
+        if (expectedSize > 0) {
+            assertEquals(expectedArrival, flights.get(0).getArrival());
+        }
+    }
+
+    private void verifyFlightsTo(String arrival, int expectedSize, String expectedDeparture) {
+        List<Flight> flights = finder.findFlightsTo(arrival);
+
+        assertEquals(expectedSize, flights.size());
+        if (expectedSize > 0) {
+            assertEquals(expectedDeparture, flights.get(0).getDeparture());
+        }
+    }
+
+    private void verifyNoFlightsFrom(String departure) {
+        assertTrue(finder.findFlightsFrom(departure).isEmpty());
+    }
+
+    private void verifyNoFlightsTo(String arrival) {
+        assertTrue(finder.findFlightsTo(arrival).isEmpty());
     }
 }
