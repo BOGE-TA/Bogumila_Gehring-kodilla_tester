@@ -1,14 +1,16 @@
 package com.kodilla.collections.adv.maps.homework;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class School {
-    private String name; // school name
-    private List<Integer> studentsInClasses;//  Number of students in each class
+class School {
+    private final String name;
+    private final List<Integer> studentCounts;
 
-    public School(String name, List<Integer> studentsInClasses) {
+    public School(String name, List<Integer> studentCounts) {
         this.name = name;
-        this.studentsInClasses = studentsInClasses;
+        this.studentCounts = studentCounts;
     }
 
     public String getName() {
@@ -16,16 +18,7 @@ public class School {
     }
 
     public int getTotalStudents() {
-        int total = 0;
-        for (int students : studentsInClasses) {
-            total += students;
-        }
-        return total;
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        return studentCounts.stream().mapToInt(Integer::intValue).sum();
     }
 }
 

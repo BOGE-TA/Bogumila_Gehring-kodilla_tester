@@ -4,7 +4,7 @@ import java.util.*;
 
 // Principal class representing the school principal
 class Principal {
-    private String name; // director's surname and name
+    private final String name; // director's surname and name
 
     public Principal(String name) {
         this.name = name;
