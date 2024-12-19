@@ -1,6 +1,7 @@
-
+package com.kodilla.stream;
 import java.util.ArrayList;
 import java.util.List;
+
 public class UsersRepository {
     public static List<User> getUsersList() {
         List<User> users = new ArrayList<>();
