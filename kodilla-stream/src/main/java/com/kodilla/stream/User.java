@@ -1,17 +1,17 @@
 package com.kodilla.stream;
-import java.util.Locale;
+
 import java.util.Objects;
 
 public class User {
     private String username;
     private int age;
-    private int numberOfPost;
+    private int numberOfPosts;
     private String group;
 
-    public User(String username, int age, int numberOfPost, String group) {
+    public User(String username, int age, int numberOfPosts, String group) {
         this.username = username;
         this.age = age;
-        this.numberOfPost = numberOfPost;
+        this.numberOfPosts = numberOfPosts;
         this.group = group;
     }
 
@@ -23,24 +23,26 @@ public class User {
         return age;
     }
 
-    public int getNumberOfPost() {
-        return numberOfPost;
-    }
-
     public String getGroup() {
         return group;
     }
+
+    public int getNumberOfPosts() { return numberOfPosts;}
+
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return age == user.age && numberOfPost == user.numberOfPost && Objects.equals(username, user.username) && Objects.equals(group, user.group);
+        return age == user.age && numberOfPosts == user.numberOfPosts && Objects.equals(username, user.username) && Objects.equals(group, user.group);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, age, numberOfPost, group);
+        return Objects.hash(username, age, numberOfPosts, group);
     }
+
+
 }
