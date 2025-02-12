@@ -3,7 +3,7 @@ package com.kodilla.exception.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-class Warehouse {
+public class Warehouse {
     private List<Order> orders = new ArrayList<>();
 
     public void addOrder(Order order) {
