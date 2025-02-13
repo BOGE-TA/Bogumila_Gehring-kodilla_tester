@@ -1,11 +1,8 @@
 package com.kodilla.optional.homework;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationTest {
@@ -19,15 +16,10 @@ public class ApplicationTest {
                 new Student("Rebeca Perry", null)
         );
 
-        assertEquals("Matthew Blue", getTeacherName(students.get(0)));
-        assertEquals("<undefined>", getTeacherName(students.get(1)));
-        assertEquals("Anne Windsor", getTeacherName(students.get(2)));
-        assertEquals("<undefined>", getTeacherName(students.get(3)));
-    }
-
-    private String getTeacherName(Student student) {
-        return Optional.ofNullable(student.getTeacher())
-                .map(Teacher::getName)
-                .orElse("<undefined>");
+        assertEquals("Matthew Blue", students.get(0).getTeacherName());
+        assertEquals("<undefined>", students.get(1).getTeacherName());
+        assertEquals("Anne Windsor", students.get(2).getTeacherName());
+        assertEquals("<undefined>", students.get(3).getTeacherName());
     }
 }
+
